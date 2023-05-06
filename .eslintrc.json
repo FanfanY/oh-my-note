@@ -1,7 +1,7 @@
 {
-  "extends": ["next/core-web-vitals","plugin:@typescript-eslint/recommended"],
+  "extends": ["next/core-web-vitals","plugin:@typescript-eslint/recommended","plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint","import","unused-imports"],
+  "plugins": ["@typescript-eslint","import","unused-imports","prettier"],
   "rules": {
     "no-console": "error",
     "eqeqeq":"error",
@@ -19,6 +19,7 @@
           "order": "asc"
         }
       }
-    ]
+    ],
+    "prettier/prettier": "error"
   }
 }
