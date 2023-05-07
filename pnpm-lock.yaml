@@ -16,6 +16,7 @@ specifiers:
   husky: ^8.0.3
   lint-staged: ^13.2.2
   next: 13.4.1
+  normalize.css: ^8.0.1
   prettier: 2.8.8
   react: 18.2.0
   react-dom: 18.2.0
@@ -31,6 +32,7 @@ dependencies:
   eslint: registry.npmmirror.com/eslint/8.40.0
   eslint-config-next: registry.npmmirror.com/eslint-config-next/13.4.1_3qfatcekpgbllh6uk5ivyhkbxq
   next: registry.npmmirror.com/next/13.4.1_biqbaboplfbrettd7655fr4n2y
+  normalize.css: registry.npmmirror.com/normalize.css/8.0.1
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
   typescript: registry.npmmirror.com/typescript/5.0.4
@@ -3540,6 +3542,12 @@ packages:
     version: 3.0.0
     engines: {node: '>=0.10.0'}
     dev: true
+
+  registry.npmmirror.com/normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/normalize.css/-/normalize.css-8.0.1.tgz}
+    name: normalize.css
+    version: 8.0.1
+    dev: false
 
   registry.npmmirror.com/npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/npm-run-path/-/npm-run-path-4.0.1.tgz}
