@@ -21,7 +21,6 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   stylelint: ^15.6.1
-  stylelint-config-prettier: ^9.0.5
   stylelint-config-standard: ^33.0.0
   typescript: 5.0.4
 
@@ -49,7 +48,6 @@ devDependencies:
   lint-staged: registry.npmmirror.com/lint-staged/13.2.2
   prettier: registry.npmmirror.com/prettier/2.8.8
   stylelint: registry.npmmirror.com/stylelint/15.6.1
-  stylelint-config-prettier: registry.npmmirror.com/stylelint-config-prettier/9.0.5_stylelint@15.6.1
   stylelint-config-standard: registry.npmmirror.com/stylelint-config-standard/33.0.0_stylelint@15.6.1
 
 packages:
@@ -4518,19 +4516,6 @@ packages:
       client-only: registry.npmmirror.com/client-only/0.0.1
       react: registry.npmmirror.com/react/18.2.0
     dev: false
-
-  registry.npmmirror.com/stylelint-config-prettier/9.0.5_stylelint@15.6.1:
-    resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/stylelint-config-prettier/-/stylelint-config-prettier-9.0.5.tgz}
-    id: registry.npmmirror.com/stylelint-config-prettier/9.0.5
-    name: stylelint-config-prettier
-    version: 9.0.5
-    engines: {node: '>= 12'}
-    hasBin: true
-    peerDependencies:
-      stylelint: '>= 11.x < 15'
-    dependencies:
-      stylelint: registry.npmmirror.com/stylelint/15.6.1
-    dev: true
 
   registry.npmmirror.com/stylelint-config-recommended/12.0.0_stylelint@15.6.1:
     resolution: {integrity: sha512-x6x8QNARrGO2sG6iURkzqL+Dp+4bJorPMMRNPScdvaUK8PsynriOcMW7AFDKqkWAS5wbue/u8fUT/4ynzcmqdQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/stylelint-config-recommended/-/stylelint-config-recommended-12.0.0.tgz}
