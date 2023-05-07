@@ -9,7 +9,8 @@
     "lint": "next lint",
     "commit": "cz",
     "format": "prettier --write \"src/**/*.{html,ts,js,json,jsx,tsx}\"",
-    "styleLint":"stylelint \"src/**/*.css\" --fix"
+    "styleLint": "stylelint \"src/**/*.css\" --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.1.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
     "prettier": "2.8.8",
     "stylelint": "^15.6.1",
     "stylelint-config-prettier": "^9.0.5",
