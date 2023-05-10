@@ -8,16 +8,16 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "cz",
-    "format": "prettier --write",
+    "format": "prettier --write --ignore-unknown",
     "styleLint": "stylelint --fix",
     "prepare": "husky install"
   },
   "lint-staged": {
+    "**/*": [
+      "pnpm run format"
+    ],
     "*.{css,scss}": [
       "pnpm run styleLint"
-    ],
-    "*.{html,css,scss,ts,js,json,jsx,tsx}": [
-      "pnpm run format"
     ]
   },
   "dependencies": {
