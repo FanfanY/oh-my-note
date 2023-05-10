@@ -13,10 +13,10 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.css": [
+    "*.{css,scss}": [
       "pnpm run styleLint"
     ],
-    "*.{html,css,ts,js,json,jsx,tsx}": [
+    "*.{html,css,scss,ts,js,json,jsx,tsx}": [
       "pnpm run format"
     ]
   },
