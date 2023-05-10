@@ -1,14 +1,14 @@
 .home-content {
-  flex:1;
+  flex: 1;
   display: grid;
- align-items: center;
- justify-content: center;
- min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .home-content-text {
   width: 16ch;
-  animation: typing 2s steps(16), blink .5s step-end infinite alternate;
+  animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   color: white;
@@ -18,12 +18,12 @@
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 }
-    
+
 @keyframes blink {
   50% {
-    border-color: transparent
+    border-color: transparent;
   }
 }
