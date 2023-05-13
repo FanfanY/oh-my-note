@@ -1,9 +1,8 @@
 .home-content {
-  flex: 1;
   display: grid;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--page-header-height));
 }
 
 .home-content-text {
@@ -11,7 +10,6 @@
   animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  color: white;
   border-right: 3px solid orange;
   font-family: monospace;
 }

@@ -1,14 +1,27 @@
 .page-header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100vw;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+  height: var(--page-header-height);
+  padding: 0 var(--page-header-padding-left-right);
+  backdrop-filter: saturate(180%) blur(5px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 600;
-  height: 88px;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
+  height: 100%;
+}
+
+.page-start-scroll {
+  background: hsl(0deg 0% 100% / 80%);
+  box-shadow: inset 0 -1px 0 0 #eaeaea;
 }
 
 .nav {
@@ -36,4 +49,14 @@
 .logo {
   font-size: 24px;
   font-family: 'AaMaKeTi-2', sans-serif;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--scroll-bar-color);
+  transform-origin: 0%;
 }

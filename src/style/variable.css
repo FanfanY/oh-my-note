@@ -1,3 +1,7 @@
 :root {
   --basic-font-size: 16px;
+  --basic-font-color: #666;
+  --page-header-height: 64px;
+  --page-header-padding-left-right: 111px;
+  --scroll-bar-color: red;
 }

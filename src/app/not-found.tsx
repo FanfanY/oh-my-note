@@ -4,13 +4,8 @@ import styles from 'src/app/not-found.module.scss'
 
 function Error() {
   return (
-    <div>
+    <div className={styles['not-found-container']}>
       <div className={styles['stars']}>
-        <div className={styles['custom-navbar']}>
-          <div className={styles['brand-logo']}>
-            <Image alt="" src="http://salehriaz.com/404Page/img/logo.svg" width={80} height={80} />
-          </div>
-        </div>
         <div className={styles['central-body']}>
           <Image
             alt=""
