@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/18888628835/oh-my-note/compare/v1.1.0...v1.2.0) (2023-05-13)
+
+
+### Features
+
+* add basic header ([1bd54cf](https://github.com/18888628835/oh-my-note/commit/1bd54cfab3432539c1b93ae91d5df917bbde6deb))
+* add process bar ([16b49cb](https://github.com/18888628835/oh-my-note/commit/16b49cb45bfd659ae66cfc344a895bbe294d793b))
+* add welcome text in the page with animation ([6811177](https://github.com/18888628835/oh-my-note/commit/68111775efe302208f693954c2ea3c778e1f592f))
+
 ## [1.1.0](https://github.com/18888628835/oh-my-note/compare/v1.0.0...v1.1.0) (2023-05-08)
 
 
