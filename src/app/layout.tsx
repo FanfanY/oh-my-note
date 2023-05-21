@@ -1,4 +1,5 @@
 import 'normalize.css'
+import 'src/style/markdown.css'
 import 'src/style/variable.css'
 import 'src/style/reset.css'
 import 'src/style/global.css'
@@ -19,9 +20,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const nav = await getNavigation()
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="https://esm.sh/github-markdown-css@5.2.0/github-markdown.css" />
-      </head>
       <body className={inter.className}>
         <Navigation nav={nav} />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>

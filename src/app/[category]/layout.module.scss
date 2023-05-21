@@ -1,0 +1,32 @@
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem var(--page-header-padding-left-right);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.sub-nav-container {
+  background-color: aqua;
+  flex: 0 0 var(--sub-nav-width);
+  height: calc(100vh - var(--page-header-height) - 2.5rem);
+  overflow: scroll;
+  position: sticky;
+  top: var(--page-header-height);
+  border-right: 1px solid rgb(5 5 5 / 6%);
+}
+
+.blog-container {
+  flex: 1;
+}
+
+@media (width <= 768px) {
+  /* 在小于 768px 的视口宽度下，中间列宽度为100% */
+  .category-container {
+    flex-direction: column;
+  }
+
+  .blog-container {
+    flex: 0 0 100%;
+  }
+}

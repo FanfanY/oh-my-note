@@ -30,9 +30,9 @@ const Navigation: FC<NavigationProps> = ({ nav }) => {
         </div>
         <nav className={styles['nav']}>
           <ul className={styles['nav-inner']}>
-            {nav.map(({ title }, index) => (
+            {nav.map(({ title, path }, index) => (
               <motion.li {...effects} key={index}>
-                {title}
+                <Link href={path}>{title}</Link>
               </motion.li>
             ))}
           </ul>
