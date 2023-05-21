@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/18888628835/oh-my-note/compare/v1.2.0...v1.3.0) (2023-05-21)
+
+
+### Features
+
+* basic sub navigation ([6187b84](https://github.com/18888628835/oh-my-note/commit/6187b84bfe51e4bcc5fefabfd31cb39bb61b1386))
+
 ## [1.2.0](https://github.com/18888628835/oh-my-note/compare/v1.1.0...v1.2.0) (2023-05-13)
 
 
