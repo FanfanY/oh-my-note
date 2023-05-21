@@ -25,7 +25,7 @@ const page = async ({ params: { slug } }: { params: { slug: string[] } }) => {
 
 export default page
 
-export async function getPostContent(slug: string[]) {
+async function getPostContent(slug: string[]) {
   const filePath = path.join(...slug)
   const fullPath = path.join(AppConfig.docsPath, filePath + AppConfig.suffix)
   const fileContent = fs.readFileSync(fullPath, 'utf-8')
