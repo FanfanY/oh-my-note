@@ -1,21 +1,14 @@
-import path from 'path'
-
 const AppConfig = {
-  routes: [
+  navigation: [
     {
       title: '笔记',
-      path: '/note',
-      children: [
-        { title: 'JavaScript', path: '/javascript' },
-        { title: 'performance', path: '/performance' },
-        { title: 'good', path: '/index.md' },
-      ],
+      path: '/docs/note/javascript/0',
     },
-    { title: '思考', path: '/thinking', children: [{ title: 'good', path: '/index.md' }] },
-    { title: '协作', path: '/collaborate', children: [{ title: '', path: '' }] },
-    { title: '实践', path: '/practice', children: [{ title: '', path: '' }] },
+    { title: '思考', path: '/thinking' },
+    { title: '协作', path: '/collaborate' },
+    { title: '实践', path: '/practice' },
   ],
-  docsPath: path.join(process.cwd(), 'docs'),
+  docsPath: 'docs',
   suffix: '.md',
 }
 export default AppConfig

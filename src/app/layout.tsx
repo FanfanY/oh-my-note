@@ -28,6 +28,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
-export async function getNavigation() {
-  return AppConfig.routes
+async function getNavigation() {
+  return AppConfig.navigation
 }

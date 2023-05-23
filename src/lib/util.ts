@@ -2,7 +2,11 @@ import fs from 'fs'
 import { marked } from 'marked'
 import AppConfig from 'src/config/app'
 export function isDirectory(path: string) {
-  return fs.statSync(path).isDirectory()
+  try {
+    return fs.statSync(path).isDirectory()
+  } catch (error) {
+    return false
+  }
 }
 
 export function addSuffix(fileName: string) {
