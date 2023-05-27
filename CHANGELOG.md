@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/18888628835/oh-my-note/compare/v1.3.1...v1.4.0) (2023-05-27)
+
+
+### Features
+
+* sign in ([6457aa1](https://github.com/18888628835/oh-my-note/commit/6457aa1cd8e0ca6225da7c481bfb0c0ca95c0362))
+
 ## [1.3.1](https://github.com/18888628835/oh-my-note/compare/v1.3.0...v1.3.1) (2023-05-21)
 
 
