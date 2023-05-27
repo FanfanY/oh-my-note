@@ -1,22 +1,28 @@
 'use client'
+import { Avatar, Dropdown } from 'antd'
 import classNames from 'classnames'
 import { motion, useScroll } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC } from 'react'
+import { AiFillCaretDown } from 'react-icons/ai'
 import styles from 'src/app/layout.module.scss'
 import AppConfig from 'src/config/app'
-
 import useIsScroll from 'src/hooks/useIsScroll'
 interface NavigationProps {
-  nav: typeof AppConfig.routes
+  nav: typeof AppConfig.navigation
 }
 const effects = {
   transition: { duration: 0.2 },
-  whileHover: { scale: 1.2, opacity: 0.9 },
+  whileHover: { color: 'var(--color-for-link)' },
 }
 
 const Navigation: FC<NavigationProps> = ({ nav }) => {
   const { scrollYProgress } = useScroll()
+  const session = useSession()
+  const { data } = session
+
   const { isScroll } = useIsScroll()
   const classes = classNames(styles['page-header'], {
     [styles['page-start-scroll']]: isScroll,
@@ -24,44 +30,96 @@ const Navigation: FC<NavigationProps> = ({ nav }) => {
 
   return (
     <header className={classes}>
-      <div className={styles['page-header-inner']}>
-        <div className={styles['logo']}>
-          <Link href="/">oh-my-note</Link>
-        </div>
-        <nav className={styles['nav']}>
+      <nav className={styles['page-header-inner']}>
+        <div className={styles['left']}>
+          <div className={styles['logo']}>
+            <Image width={29} height={32} alt="" src="/logo-xs.png"></Image>
+            <b className={styles['title']}>
+              <Link href="/">Oh-My-Note</Link>
+            </b>
+          </div>
           <ul className={styles['nav-inner']}>
             {nav.map(({ title, path }, index) => (
-              <motion.li {...effects} key={index}>
+              <motion.li className={styles['nav-link']} {...effects} key={index}>
                 <Link href={path}>{title}</Link>
               </motion.li>
             ))}
           </ul>
+        </div>
+        <div className={styles['right']}>
           <div className={styles['action']}>
-            <motion.div className="search" {...effects}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                width="20"
-                height="20"
+            {data ? (
+              <Dropdown
+                menu={{
+                  items: [
+                    {
+                      key: '1',
+                      label: (
+                        <motion.div
+                          style={{ alignItems: 'center', display: 'flex', justifyContent: 'center', gap: 8 }}
+                          {...effects}
+                          onClick={() => signOut()}
+                        >
+                          Sign out
+                        </motion.div>
+                      ),
+                    },
+                  ],
+                }}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </motion.div>
-
-            <motion.div className="sign-in" {...effects}>
-              Sign In
-            </motion.div>
-            <div className="menu">menu</div>
+                <div className={styles['space']}>
+                  <Avatar size="small" src={data?.user?.image} />
+                  <AiFillCaretDown />
+                </div>
+              </Dropdown>
+            ) : (
+              <Dropdown
+                menu={{
+                  items: [
+                    {
+                      key: '1',
+                      label: (
+                        <motion.div
+                          style={{ alignItems: 'center', display: 'flex', justifyContent: 'center', gap: 8 }}
+                          {...effects}
+                          onClick={() => signIn('github')}
+                        >
+                          <Image width={24} height={24} src="/github.svg" alt="" />
+                          Sign in with github
+                        </motion.div>
+                      ),
+                    },
+                    {
+                      key: '2',
+                      label: (
+                        <motion.div
+                          style={{ alignItems: 'center', display: 'flex', justifyContent: 'center', gap: 8 }}
+                          {...effects}
+                          onClick={() => signIn('google')}
+                        >
+                          <Image width={24} height={24} src="/google.svg" alt="" />
+                          Sign in with google
+                        </motion.div>
+                      ),
+                    },
+                  ],
+                }}
+              >
+                <motion.div {...effects} className={styles['space']}>
+                  Sign in
+                  <AiFillCaretDown />
+                </motion.div>
+              </Dropdown>
+            )}
           </div>
-        </nav>
-      </div>
+          <Link
+            className={styles['npm']}
+            target="_blank"
+            href="https://18888628835.github.io/react-drag-resizable/"
+          ></Link>
+          <Link className={styles['git-hub']} target="_blank" href="https://github.com/18888628835"></Link>
+        </div>
+      </nav>
       <motion.div className={styles['progress-bar']} hidden={isScroll === false} style={{ scaleX: scrollYProgress }} />
     </header>
   )

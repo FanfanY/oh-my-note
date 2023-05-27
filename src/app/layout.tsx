@@ -3,13 +3,11 @@ import 'src/style/markdown.css'
 import 'src/style/variable.css'
 import 'src/style/reset.css'
 import 'src/style/global.css'
-import 'src/style/fonts.css'
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Provider from 'src/components/Provider'
 import Navigation from 'src/components/nav'
 import AppConfig from 'src/config/app'
 import StyledJsxRegistry from 'src/lib/registry'
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'oh-my-note',
@@ -20,9 +18,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const nav = await getNavigation()
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navigation nav={nav} />
-        <StyledJsxRegistry>{children}</StyledJsxRegistry>
+      <body>
+        <Provider>
+          <Navigation nav={nav} />
+          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+        </Provider>
       </body>
     </html>
   )

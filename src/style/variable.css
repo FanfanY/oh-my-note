@@ -1,8 +1,20 @@
 :root {
-  --basic-font-size: calc(0.5vw + 0.5vh + 0.1vmin);
-  --basic-font-color: #666;
-  --page-header-height: 64px;
-  --page-header-padding-left-right: 6.93rem;
+  --basic-font-size: 16px;
+  --basic-font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --basic-font-color: #1c1e21;
+  --page-header-height: 60px;
+  --page-header-background: hsl(0deg 0% 100% / 95%);
   --scroll-bar-color: red;
   --menu-width: 17.75rem;
+  --color-for-link: #289ef9;
+  --nav-item-padding-vertical: 4px;
+  --nav-item-padding-horizontal: 12px;
+  --nav-header-padding-vertical: 8px;
+  --nav-header-padding-horizontal: 16px;
+  --banner-background-color: #f5f5f5;
+  --basic-margin: 24px;
+  --basic-half-margin: 12px;
+  --basic-gap: 8px;
+  --basic-half-gap: 4px;
 }

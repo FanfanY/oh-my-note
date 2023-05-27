@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--page-header-height));
+  background-color: linear-gradient(0deg, var(--banner-background-color) 0, #fff 100%);
 }
 
 .home-content-text {
@@ -11,7 +12,6 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid orange;
-  font-family: monospace;
 }
 
 @keyframes typing {
