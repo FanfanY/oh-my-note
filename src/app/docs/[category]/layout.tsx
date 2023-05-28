@@ -81,7 +81,7 @@ function getFileLists(directory: string) {
 }
 
 export async function generateStaticParams({ params: { category } }: { params: { category: string } }) {
-  const fileLists = getFileLists(path.join(AppConfig.docsPath, category))
+  const fileLists = getFileLists(path.join(process.cwd(), AppConfig.docsPath, category))
 
   const slugs = fileLists.map((fileList) => ({ slug: fileList.filter((name) => name !== ''), category }))
 

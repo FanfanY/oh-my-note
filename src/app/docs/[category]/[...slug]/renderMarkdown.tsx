@@ -1,5 +1,4 @@
 'use client'
-import { marked } from 'marked'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -10,12 +9,8 @@ interface RenderMarkdownProps {
   data: string
 }
 const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
-  window.location.pathname
-  const tokens = marked.lexer(data)
-  const headings = tokens.filter((token) => token.type === 'heading')
-
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       <ReactMarkdown
         components={{
           code({ node, style, inline, className, children, ...props }) {

@@ -11,6 +11,7 @@
   padding: var(--nav-header-padding-vertical) var(--nav-header-padding-horizontal);
   backdrop-filter: saturate(180%) blur(5px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
 }
 
 .page-header-inner {
