@@ -1,5 +1,7 @@
 :root {
+  --animate-duration: 300ms;
   --basic-font-size: 16px;
+  --font-size-18: 18px;
   --basic-font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --basic-font-color: #1c1e21;
@@ -17,4 +19,12 @@
   --basic-half-margin: 12px;
   --basic-gap: 8px;
   --basic-half-gap: 4px;
+  --color-btn-hover-background: rgb(235 235 235);
+  --basic-border-color: rgb(235 235 235);
+  --basic-background: rgb(250 250 250);
+  --border-radius-6: 6px;
+  --color-font-for-copy-header: rgb(102 102 102);
+  --padding-for-copy-header: 8px 12px 8px 16px;
+  --width-icon-basic: 32px;
+  --height-icon-basic: 32px;
 }

@@ -3,7 +3,7 @@ import path from 'path'
 import { marked } from 'marked'
 import { notFound } from 'next/navigation'
 import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
-import RenderMarkdown from 'src/app/docs/[category]/[...slug]/renderMarkdown'
+import RenderMarkdown from 'src/components/renderMarkdown'
 import AppConfig from 'src/config/app'
 
 const page = async ({ params: { slug, category } }: { params: { slug: string[]; category: string } }) => {

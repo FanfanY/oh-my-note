@@ -9,6 +9,7 @@ specifiers:
   '@types/styled-components': ^5.1.26
   '@typescript-eslint/eslint-plugin': ^5.59.2
   '@typescript-eslint/parser': ^5.59.2
+  animate.css: ^4.1.1
   antd: ^5.5.0
   classnames: ^2.3.2
   cz-conventional-changelog: ^3.3.0
@@ -45,6 +46,7 @@ dependencies:
   '@types/node': registry.npmmirror.com/@types/node/20.1.0
   '@types/react': registry.npmmirror.com/@types/react/18.2.6
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/18.2.4
+  animate.css: registry.npmmirror.com/animate.css/4.1.1
   antd: registry.npmmirror.com/antd/5.5.0_biqbaboplfbrettd7655fr4n2y
   classnames: registry.npmmirror.com/classnames/2.3.2
   eslint: registry.npmmirror.com/eslint/8.40.0
@@ -3791,6 +3793,17 @@ packages:
       require-from-string: registry.npmmirror.com/require-from-string/2.0.2
       uri-js: registry.npmmirror.com/uri-js/4.4.1
     dev: true
+
+  registry.npmmirror.com/animate.css/4.1.1:
+    resolution:
+      {
+        integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/animate.css/-/animate.css-4.1.1.tgz,
+      }
+    name: animate.css
+    version: 4.1.1
+    dev: false
 
   registry.npmmirror.com/ansi-escapes/4.3.2:
     resolution:

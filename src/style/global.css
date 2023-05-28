@@ -9,8 +9,14 @@ body {
   min-height: 100vh;
 }
 
-.flex-box {
+.flex-center-box {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flex-space-between-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

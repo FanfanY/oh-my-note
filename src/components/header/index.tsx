@@ -26,7 +26,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     {
       key: '1',
       label: (
-        <div className={classNames('flex-box', styles['gap-8'], styles['nav-link'])} onClick={() => signOut()}>
+        <div className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])} onClick={() => signOut()}>
           Sign out
         </div>
       ),
@@ -36,7 +36,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     {
       key: '1',
       label: (
-        <div className={classNames('flex-box', styles['gap-8'], styles['nav-link'])} onClick={() => signIn('github')}>
+        <div
+          className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])}
+          onClick={() => signIn('github')}
+        >
           <Image width={24} height={24} src="/github.svg" alt="" />
           Sign in with github
         </div>
@@ -45,7 +48,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     {
       key: '2',
       label: (
-        <div className={classNames('flex-box', styles['gap-8'], styles['nav-link'])} onClick={() => signIn('google')}>
+        <div
+          className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])}
+          onClick={() => signIn('google')}
+        >
           <Image width={24} height={24} src="/google.svg" alt="" />
           Sign in with google
         </div>
@@ -57,7 +63,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     <header className={rootClasses}>
       <nav className={classNames(styles['nav'], styles['nav-padding'])}>
         <div className={styles['nav-left']}>
-          <Link className={classNames('flex-box', styles['nav-link'], styles['brand'])} href="/">
+          <Link className={classNames('flex-center-box', styles['nav-link'], styles['brand'])} href="/">
             <Image className={styles['logo']} width={29} height={32} alt="" src="/logo-xs.png"></Image>
             <b>Oh-My-Note</b>
           </Link>
@@ -75,7 +81,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                 items: dropdownItems,
               }}
             >
-              <div className={classNames('flex-box', styles['gap-4'], styles['nav-link'])}>
+              <div className={classNames('flex-center-box', styles['gap-4'], styles['nav-link'])}>
                 {data ? <Avatar size="small" src={data?.user?.image} /> : 'Sign in'}
                 <AiFillCaretDown />
               </div>
