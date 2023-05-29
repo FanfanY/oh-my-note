@@ -1,6 +1,6 @@
+import 'animate.css'
 import 'normalize.css'
 import 'src/style/markdown.css'
-import 'animate.css'
 import 'src/style/variable.css'
 import 'src/style/reset.css'
 import 'src/style/global.css'

@@ -17,16 +17,20 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     notFound()
   }
   return (
-    <div className="post" style={{ display: 'flex' }}>
-      <article className={styles['blog-container']}>
-        <RenderMarkdown data={postContent} />
-      </article>
-      <div>
-        <nav>
-          {headings.map(({ text }, index) => (
-            <div key={index}>{text}</div>
-          ))}
-        </nav>
+    <div className={styles['doc-main-container']}>
+      <div className={styles['doc-container']}>
+        <article className={styles['doc-article']}>
+          <RenderMarkdown data={postContent} />
+        </article>
+        <div className={styles['doc-toc-container']}>
+          <nav className={styles['doc-toc']}>
+            {headings.map(({ text }, index) => (
+              <div key={index} className="text-overflow-ellipsis">
+                {text}
+              </div>
+            ))}
+          </nav>
+        </div>
       </div>
     </div>
   )

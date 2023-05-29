@@ -3,10 +3,13 @@ import { Menu as AntdMenu, MenuProps } from 'antd'
 import { useRouter } from 'next/navigation'
 import React, { FC } from 'react'
 import { styled } from 'styled-components'
+
 const StyledMenu = styled(AntdMenu)`
-  &ul {
+  &.ant-menu-root {
     border: none;
-    height: 100%;
+    font-size: var(--basic-font-size);
+    position: sticky;
+    top: calc(var(--page-header-height) + 1rem);
   }
 `
 const Menu: FC<MenuProps> = (props) => {
@@ -14,6 +17,7 @@ const Menu: FC<MenuProps> = (props) => {
 
   return (
     <StyledMenu
+      className="text-overflow-ellipsis"
       {...props}
       onClick={(item) => {
         push(item.key)

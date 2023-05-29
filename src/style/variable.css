@@ -1,5 +1,4 @@
 :root {
-  --animate-duration: 300ms;
   --basic-font-size: 16px;
   --font-size-18: 18px;
   --basic-font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
@@ -27,4 +26,6 @@
   --padding-for-copy-header: 8px 12px 8px 16px;
   --width-icon-basic: 32px;
   --height-icon-basic: 32px;
+  --doc-sidebar-width: 300px;
+  --basic-spacing: 1rem;
 }

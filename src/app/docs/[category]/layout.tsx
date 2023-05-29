@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
+import styles from 'src/app/docs/[category]/layout.module.scss'
 import Menu from 'src/components/menu'
 import AppConfig from 'src/config/app'
 import { deleteSuffix, getLabelFromMarkdown } from 'src/lib/util'
@@ -22,10 +22,10 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className={styles['category-container']}>
-      <div className={styles['sub-nav-container']}>
+    <section className={styles['main-container']}>
+      <aside className={styles['doc-sidebar-container']}>
         <Menu items={categoryMenu} mode="inline" />
-      </div>
+      </aside>
       {children}
     </section>
   )
