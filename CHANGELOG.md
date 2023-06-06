@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/18888628835/oh-my-note/compare/v1.5.0...v1.6.0) (2023-05-29)
+
+
+### Features
+
+* copy ([121d514](https://github.com/18888628835/oh-my-note/commit/121d514367535769d6072998ba2f3fd0920344dc))
+
 ## [1.5.0](https://github.com/18888628835/oh-my-note/compare/v1.4.0...v1.5.0) (2023-05-28)
 
 
