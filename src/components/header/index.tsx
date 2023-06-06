@@ -19,9 +19,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
   const session = useSession()
   const { data } = session
   const { isScroll } = useIsScroll()
-  const rootClasses = classNames(styles['page-header'], styles['page-header-sticky'], {
-    [styles['page-header-start-scroll']]: isScroll,
-  })
+  const rootClasses = classNames(styles['page-header'], styles['page-header-sticky'])
   const signOutItems = [
     {
       key: '1',

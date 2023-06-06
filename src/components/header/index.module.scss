@@ -4,21 +4,16 @@
   font-weight: 600;
   cursor: pointer;
   background: var(--page-header-background);
-  box-shadow: none;
   height: var(--page-header-height);
   backdrop-filter: saturate(180%) blur(5px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 -1px 0 0 #eaeaea;
 }
 
 .page-header-sticky {
   position: sticky;
   top: 0;
   z-index: 999;
-}
-
-.page-header-start-scroll {
-  background: hsl(0deg 0% 100% / 80%);
-  box-shadow: inset 0 -1px 0 0 #eaeaea;
 }
 
 .nav {
@@ -51,7 +46,7 @@
   transition: all 0.2s;
 
   &:hover {
-    color: var(--color-for-link);
+    color: var(--color-for-hover-link);
   }
 }
 

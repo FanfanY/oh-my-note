@@ -10,6 +10,7 @@
 .doc-article {
   padding: var(--basic-spacing);
   flex: 10;
+  margin-top: var(--doc-margin-top);
 }
 
 .doc-toc-container {
@@ -23,7 +24,7 @@
   padding: var(--basic-gap);
   padding-right: 0;
   position: sticky;
-  top: calc(var(--page-header-height) + 1rem);
+  top: calc(var(--page-header-height) + 1rem + var(--doc-margin-top));
 }
 
 @media (width <= 768px) {

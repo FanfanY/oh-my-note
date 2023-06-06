@@ -5,10 +5,10 @@
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --basic-font-color: #1c1e21;
   --page-header-height: 60px;
-  --page-header-background: hsl(0deg 0% 100% / 95%);
+  --page-header-background: hsl(0deg 0% 100% / 80%);
   --scroll-bar-color: red;
   --menu-width: 17.75rem;
-  --color-for-link: #289ef9;
+  --color-for-hover-link: #289ef9;
   --nav-item-padding-vertical: 4px;
   --nav-item-padding-horizontal: 12px;
   --nav-padding-vertical: 8px;
@@ -28,4 +28,5 @@
   --height-icon-basic: 32px;
   --doc-sidebar-width: 300px;
   --basic-spacing: 1rem;
+  --doc-margin-top: 2.5rem;
 }

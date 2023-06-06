@@ -9,7 +9,7 @@ const StyledMenu = styled(AntdMenu)`
     border: none;
     font-size: var(--basic-font-size);
     position: sticky;
-    top: calc(var(--page-header-height) + 1rem);
+    top: calc(var(--page-header-height) + 1rem + var(--doc-margin-top));
   }
 `
 const Menu: FC<MenuProps> = (props) => {

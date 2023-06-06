@@ -6,6 +6,9 @@ import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { styled } from 'styled-components'
 import Copy from 'src/components/copy'
+import HeadingHashLink from 'src/components/hashLink'
+import { getChildrenId } from 'src/lib/md-utils'
+
 interface RenderMarkdownProps {
   data: string
 }
@@ -34,6 +37,22 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
               <code {...props} className={className}>
                 {children}
               </code>
+            )
+          },
+          h2({ node, children, level }) {
+            const id = getChildrenId(node.children)
+            return (
+              <HeadingHashLink level={level} id={id} href={`#${id}`}>
+                {children}
+              </HeadingHashLink>
+            )
+          },
+          h3({ children, node, level }) {
+            const id = getChildrenId(node.children)
+            return (
+              <HeadingHashLink level={level} id={id} href={`#${id}`}>
+                {children}
+              </HeadingHashLink>
             )
           },
         }}
