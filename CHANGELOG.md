@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/18888628835/oh-my-note/compare/v1.6.0...v1.7.0) (2023-06-06)
+
+
+### Features
+
+* heading link ([8cde651](https://github.com/18888628835/oh-my-note/commit/8cde651ea39cdefc1106df63ce52fc2062b4dffa))
+
 ## [1.6.0](https://github.com/18888628835/oh-my-note/compare/v1.5.0...v1.6.0) (2023-05-29)
 
 
