@@ -5,23 +5,3 @@
   min-height: calc(100vh - var(--page-header-height));
   background-color: linear-gradient(0deg, var(--banner-background-color) 0, #fff 100%);
 }
-
-.home-content-text {
-  width: 16ch;
-  animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid orange;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
