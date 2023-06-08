@@ -33,7 +33,7 @@ const HeadingHashLink: FC<{ level: number; id: string } & React.AnchorHTMLAttrib
     <HeadingTag id={id}>
       <A id={id} data-role="hash-link" {...restProps}>
         {children}
-        <BsLink45Deg />
+        <BsLink45Deg className="inline-block" />
       </A>
     </HeadingTag>
   )

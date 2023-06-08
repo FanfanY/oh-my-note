@@ -1,0 +1,13 @@
+.doc-toc-container {
+  flex: 3;
+  padding-left: var(--basic-spacing);
+  padding-right: var(--basic-spacing);
+}
+
+.doc-toc {
+  width: 100%;
+  padding: var(--basic-gap);
+  padding-right: 0;
+  position: sticky;
+  top: calc(var(--page-header-height) + 1rem + var(--doc-margin-top));
+}

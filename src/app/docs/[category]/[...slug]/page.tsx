@@ -4,6 +4,7 @@ import { marked } from 'marked'
 import { notFound } from 'next/navigation'
 import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
 import RenderMarkdown from 'src/components/renderMarkdown'
+import Toc from 'src/components/toc'
 import AppConfig from 'src/config/app'
 
 const page = async ({ params: { slug, category } }: { params: { slug: string[]; category: string } }) => {
@@ -22,15 +23,7 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
         <article className={styles['doc-article']}>
           <RenderMarkdown data={postContent} />
         </article>
-        <div className={styles['doc-toc-container']}>
-          <nav className={styles['doc-toc']}>
-            {headings.map(({ text }, index) => (
-              <div key={index} className="text-overflow-ellipsis">
-                {text}
-              </div>
-            ))}
-          </nav>
-        </div>
+        <Toc headings={headings} />
       </div>
     </div>
   )
