@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/18888628835/oh-my-note/compare/v1.7.0...v1.8.0) (2023-06-09)
+
+
+### Features
+
+* set active toc element when scroll ([bcf8524](https://github.com/18888628835/oh-my-note/commit/bcf8524ee05f1a7bd8cfa5b5704f83cbc9bcbde1))
+
 ## [1.7.0](https://github.com/18888628835/oh-my-note/compare/v1.6.0...v1.7.0) (2023-06-06)
 
 
