@@ -4,13 +4,13 @@ import { FC, useEffect, useState } from 'react'
 import styles from 'src/components/toc/index.module.scss'
 
 interface TocProps {
-  headings: { text: string }[]
+  headings: { text: string; depth: number }[]
 }
 
 const Toc: FC<TocProps> = ({ headings }) => {
   const [activeIndex, setActiveIndex] = useState(-1)
   const getClasses = (index: number) =>
-    classNames('block leading-[1.6]', {
+    classNames('block leading-[1.6] text-ellipsis whitespace-nowrap overflow-x-hidden', {
       'font-medium': index === activeIndex,
       'text-[var(--color-for-hover-link)]': index === activeIndex,
       'hover:text-gray-600': index !== activeIndex,
@@ -47,11 +47,21 @@ const Toc: FC<TocProps> = ({ headings }) => {
 
   return (
     <div className={styles['doc-toc-container']}>
-      <div className={styles['doc-toc']}>
+      <div
+        className={classNames(
+          styles['doc-toc'],
+          'pt-[var(--basic-gap)]',
+          'pb-[var(--basic-gap)]',
+          'pl-4',
+          'border-l',
+          'border-[var(--basic-border-color)]',
+        )}
+      >
         <div className="mb-1 mt-[7px] text-sm font-medium text-gray-700">On this page</div>
         <ul className="space-y-2.5 py-2 text-sm overflow-y-auto max-h-[70vh] styled-scrollbar">
-          {headings.map(({ text }, index) => (
+          {headings.map(({ text, depth }, index) => (
             <li
+              className={depth === 3 ? 'pl-3' : ''}
               data-id={`${text.replaceAll(' ', '').replaceAll('`', '')}`}
               key={index}
               onClick={() => setActiveIndex(index)}

@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import classNames from 'classnames'
 import { marked } from 'marked'
 import { notFound } from 'next/navigation'
 import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
@@ -13,13 +14,16 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
   try {
     postContent = await getPostContent([category, ...slug])
     const tokens = marked.lexer(postContent)
-    headings = tokens.filter((token) => token.type === 'heading' && [2, 3].includes(token.depth)) as { text: string }[]
+    headings = tokens.filter((token) => token.type === 'heading' && [2, 3].includes(token.depth)) as {
+      text: string
+      depth: number
+    }[]
   } catch (error) {
     notFound()
   }
   return (
     <div className={styles['doc-main-container']}>
-      <div className={styles['doc-container']}>
+      <div className={classNames(styles['doc-container'], 'pl-4')}>
         <article className={styles['doc-article']}>
           <RenderMarkdown data={postContent} />
         </article>
