@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
@@ -53,6 +54,21 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
               <HeadingHashLink level={level} id={id} href={`#${id}`}>
                 {children}
               </HeadingHashLink>
+            )
+          },
+          img({ src, alt }) {
+            return (
+              <span className="flex justify-center items-center border-gray-200 border rounded-md mt-6 mb-6 p-2">
+                <Image
+                  loading="lazy"
+                  width={0}
+                  height={0}
+                  style={{ width: '100%', height: 'auto' }}
+                  alt={alt || ''}
+                  src={src || ''}
+                  sizes="100vw"
+                />
+              </span>
             )
           },
         }}
