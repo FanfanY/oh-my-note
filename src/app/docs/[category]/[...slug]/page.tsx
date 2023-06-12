@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { marked } from 'marked'
 import { notFound } from 'next/navigation'
 import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
+import AnimateImageProvider from 'src/components/AnimateImageProvider'
 import RenderMarkdown from 'src/components/renderMarkdown'
 import Toc from 'src/components/toc'
 import AppConfig from 'src/config/app'
@@ -25,7 +26,9 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     <div className={styles['doc-main-container']}>
       <div className={classNames(styles['doc-container'], 'pl-4')}>
         <article className={styles['doc-article']}>
-          <RenderMarkdown data={postContent} />
+          <AnimateImageProvider>
+            <RenderMarkdown data={postContent} />
+          </AnimateImageProvider>
         </article>
         <Toc headings={headings} />
       </div>
