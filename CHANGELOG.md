@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/18888628835/oh-my-note/compare/v1.8.0...v1.9.0) (2023-06-12)
+
+
+### Features
+
+* animateImageProvider ([4b45c57](https://github.com/18888628835/oh-my-note/commit/4b45c570175dba82e72e67294952e7332d65e265))
+
 ## [1.8.0](https://github.com/18888628835/oh-my-note/compare/v1.7.0...v1.8.0) (2023-06-09)
 
 
