@@ -23,6 +23,10 @@ export function getLabelFromMarkdown(markdownFilePath: string) {
   const markdown = fs.readFileSync(markdownFilePath, 'utf-8')
   const firstLine = markdown?.split('/n')[0]
   const title = marked.lexer(firstLine)[0]?.raw
-  const label = title?.replaceAll('#', '').trim().replaceAll('\n', '')
+  const label = getTextFromRaw(title)
   return label
+}
+
+export function getTextFromRaw(rawText?: string) {
+  return rawText?.replaceAll('#', '').trim().replaceAll('\n', '')
 }

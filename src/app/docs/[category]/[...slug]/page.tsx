@@ -5,16 +5,21 @@ import { marked } from 'marked'
 import { notFound } from 'next/navigation'
 import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
 import AnimateImageProvider from 'src/components/AnimateImageProvider'
+import Breadcrumb from 'src/components/breadcrumb'
 import RenderMarkdown from 'src/components/renderMarkdown'
 import Toc from 'src/components/toc'
 import AppConfig from 'src/config/app'
+import { getTextFromRaw } from 'src/lib/util'
 
 const page = async ({ params: { slug, category } }: { params: { slug: string[]; category: string } }) => {
-  let postContent, headings
+  let postContent,
+    headings,
+    breadcrumbItems = []
 
   try {
     postContent = await getPostContent([category, ...slug])
     const tokens = marked.lexer(postContent)
+    breadcrumbItems = [category, ...slug.slice(0, -1), getTextFromRaw(tokens[0].raw) || slug[slug.length - 1]]
     headings = tokens.filter((token) => token.type === 'heading' && [2, 3].includes(token.depth)) as {
       text: string
       depth: number
@@ -26,6 +31,9 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     <div className={styles['doc-main-container']}>
       <div className={classNames(styles['doc-container'], 'pl-4')}>
         <article className={styles['doc-article']}>
+          <div className="mt-4 mb-7 md:mt-2 md:mb-10">
+            <Breadcrumb items={breadcrumbItems} />
+          </div>
           <AnimateImageProvider>
             <RenderMarkdown data={postContent} />
           </AnimateImageProvider>
