@@ -1,11 +1,12 @@
 'use client'
 import fastDom from 'fastdom'
-import React, { useEffect, FC, PropsWithChildren } from 'react'
+import React, { useEffect, FC, PropsWithChildren, useRef } from 'react'
 
 const AnimateImageProvider: FC<PropsWithChildren> = ({ children }) => {
+  const rootDom = useRef<HTMLDivElement>(null)
   useEffect(() => {
     let startIndex = 0
-    const images = document.querySelectorAll('img')
+    const images = rootDom.current?.querySelectorAll('img') || []
 
     const viewHeight = window.innerHeight
     function animateAllImage() {
@@ -33,7 +34,7 @@ const AnimateImageProvider: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [])
 
-  return <div>{children}</div>
+  return <div ref={rootDom}>{children}</div>
 }
 
 export default AnimateImageProvider
