@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/18888628835/oh-my-note/compare/v1.9.0...v1.10.0) (2023-06-17)
+
+
+### Features
+
+* add breadcrumb ([119a69a](https://github.com/18888628835/oh-my-note/commit/119a69adf51a75fe1cd08562a2723e635aac79ec))
+
 ## [1.9.0](https://github.com/18888628835/oh-my-note/compare/v1.8.0...v1.9.0) (2023-06-12)
 
 
