@@ -5,7 +5,7 @@ import React from 'react'
 import styles from 'src/app/docs/[category]/layout.module.scss'
 import Menu from 'src/components/menu'
 import AppConfig from 'src/config/app'
-import { deleteSuffix, getLabelFromMarkdown } from 'src/lib/util'
+import { deleteSuffix, getLabelFromMarkdown, readDir } from 'src/lib/util'
 
 const layout = async ({
   params: { category },
@@ -35,7 +35,7 @@ export default layout
 
 async function traverseDirectory(directory: string): Promise<Menu[]> {
   function traverseDir(dir: string): Menu[] {
-    const files = fs.readdirSync(dir)
+    const files = readDir(dir)
 
     const result = files.map((file) => {
       const filePath = path.join(dir, file)
@@ -61,7 +61,7 @@ function getFileLists(directory: string) {
   const fileList: Array<string[]> = []
 
   function traverseDir(dir: string, prefix = '') {
-    const files = fs.readdirSync(dir)
+    const files = readDir(dir)
 
     files.forEach((file) => {
       const filePath = path.join(dir, file)

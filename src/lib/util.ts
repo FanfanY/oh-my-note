@@ -30,3 +30,7 @@ export function getLabelFromMarkdown(markdownFilePath: string) {
 export function getTextFromRaw(rawText?: string) {
   return rawText?.replaceAll('#', '').trim().replaceAll('\n', '')
 }
+
+export function readDir(entry: string) {
+  return fs.readdirSync(entry).filter((file) => (file === '.DS_Store' ? false : true))
+}

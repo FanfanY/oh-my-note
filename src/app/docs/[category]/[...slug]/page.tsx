@@ -12,14 +12,14 @@ import AppConfig from 'src/config/app'
 import { getTextFromRaw } from 'src/lib/util'
 
 const page = async ({ params: { slug, category } }: { params: { slug: string[]; category: string } }) => {
+  const decodeSlug = slug.map((s) => decodeURIComponent(s))
   let postContent,
     headings,
     breadcrumbItems = []
-
   try {
-    postContent = await getPostContent([category, ...slug])
+    postContent = await getPostContent([category, ...decodeSlug])
     const tokens = marked.lexer(postContent)
-    breadcrumbItems = [category, ...slug.slice(0, -1), getTextFromRaw(tokens[0].raw) || slug[slug.length - 1]]
+    breadcrumbItems = [category, ...decodeSlug.slice(0, -1), getTextFromRaw(tokens[0].raw) || slug[slug.length - 1]]
     headings = tokens.filter((token) => token.type === 'heading' && [2, 3].includes(token.depth)) as {
       text: string
       depth: number

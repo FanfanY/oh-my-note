@@ -10,7 +10,6 @@ const StyledMenu = styled(AntdMenu)`
     border: none;
     font-size: var(--basic-font-size);
     color: rgb(96, 103, 112);
-    font-weight: 600;
     position: sticky;
     top: calc(var(--page-header-height) + 1rem + var(--doc-margin-top));
     height: calc(100vh - var(--page-header-height) - 1rem - var(--doc-margin-top));
