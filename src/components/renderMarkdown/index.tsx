@@ -59,7 +59,14 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
           img({ src, alt }) {
             return (
               <span className="flex justify-center items-center border-gray-200 border rounded-md mt-6 mb-6 p-2">
-                <Image width={500} height={500} alt={alt || ''} src={src || ''} />
+                <Image
+                  style={{ width: 'auto', height: 'auto' }}
+                  priority
+                  width={500}
+                  height={500}
+                  alt={alt || ''}
+                  src={src || ''}
+                />
               </span>
             )
           },

@@ -6,6 +6,8 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/18888628835/image-cloud/main/**',
       },
     ],
   },
