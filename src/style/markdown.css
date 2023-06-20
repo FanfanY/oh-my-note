@@ -341,6 +341,7 @@
   font-size: 1.25em;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  scroll-margin-top: 4rem;
 }
 
 .markdown-body h4 {
@@ -553,7 +554,18 @@
 .markdown-body ul.no-list,
 .markdown-body ol.no-list {
   padding: 0;
-  list-style-type: none;
+}
+
+.markdown-body ul {
+  list-style: outside;
+}
+
+.markdown-body ul ul {
+  list-style: circle;
+}
+
+.markdown-body ol {
+  list-style: decimal;
 }
 
 .markdown-body ol[type='a'] {
