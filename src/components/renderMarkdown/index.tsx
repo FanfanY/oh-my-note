@@ -27,13 +27,20 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
         components={{
           code({ node, style, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
-
+            const code = String(children).replace(/\n$/, '')
+            const language = match ? match[1] : ''
             return !inline && match ? (
-              <Copy data={String(children).replace(/\n$/, '')} language={match[1]}>
-                <SyntaxHighlighter {...props} language={match[1]}>
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
-              </Copy>
+              <Copy
+                code={code}
+                renderHighlighter={
+                  <SyntaxHighlighter {...props} language={language}>
+                    {code}
+                  </SyntaxHighlighter>
+                }
+                codeSandbox={match['input']?.toLocaleLowerCase()?.includes('codesandbox')}
+                language={language}
+                codePreviewer={<div dangerouslySetInnerHTML={{ __html: code }} />}
+              />
             ) : (
               <code {...props} className={className}>
                 {children}
