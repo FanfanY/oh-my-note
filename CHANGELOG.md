@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/18888628835/oh-my-note/compare/v1.10.0...v1.10.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* image can't show in production ([9fcfcb8](https://github.com/18888628835/oh-my-note/commit/9fcfcb8db706ce3f3a399dfbb570917d8ad3e5b5))
+
 ## [1.10.0](https://github.com/18888628835/oh-my-note/compare/v1.9.0...v1.10.0) (2023-06-17)
 
 
