@@ -7,14 +7,13 @@ import { AiOutlineCheck, AiOutlineCodeSandbox } from 'react-icons/ai'
 import { BsCodeSlash, BsCode } from 'react-icons/bs'
 import { MdOutlineContentCopy } from 'react-icons/md'
 import Root from 'react-shadow'
-import styles from 'src/components/copy/index.module.scss'
+import styles from 'src/components/codeBlock/index.module.scss'
 
 interface CopyProps {
   code: string
   language: string
-  codeSandbox: boolean
+  mode?: CodeblockMode
   renderHighlighter: React.ReactNode
-  codePreviewer: React.ReactNode
 }
 const codeSandboxSrc = 'https://codesandbox.io/api/v1/sandboxes/define'
 const packageJSON = {
@@ -96,7 +95,7 @@ function getCodeSandboxParameters({ language, code }: { language: string; code: 
     },
   })
 }
-const Copy: FC<PropsWithChildren<CopyProps>> = ({ codePreviewer, language, code, codeSandbox, renderHighlighter }) => {
+const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHighlighter, mode }) => {
   const [copied, setCopied] = useState(false)
   const [showCode, setShowCode] = useState(false)
   const parameters = getCodeSandboxParameters({ language, code })
@@ -130,14 +129,28 @@ const Copy: FC<PropsWithChildren<CopyProps>> = ({ codePreviewer, language, code,
           </button>
         </Tooltip>
       </div>
-      {codeSandbox ? (
-        <Root.div className='className="px-2 py-2 w-full max-h-[500px] overflow-scroll flex justify-center items-center"'>
-          {codePreviewer}
+      {mode === 'preview' ? (
+        <Root.div className="px-2 py-2 w-full max-h-[500px] overflow-scroll flex justify-center items-center">
+          <div dangerouslySetInnerHTML={{ __html: code }} />
         </Root.div>
+      ) : mode === 'codesandbox' ? (
+        <div className="px-2 py-2 w-full h-[500px]">
+          <iframe
+            className="w-full h-full"
+            width="100%"
+            height="auto"
+            src={
+              codeSandboxSrc +
+              '?parameters=' +
+              parameters +
+              '&autoresize=1&view=preview&runonclick=1&embed=1&hidedevtools=1&hidenavigation=1&theme=light'
+            }
+          />
+        </div>
       ) : (
         renderHighlighter
       )}
-      {codeSandbox && (
+      {mode === 'preview' && (
         <footer>
           <form
             className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] border-dashed"
@@ -166,4 +179,4 @@ const Copy: FC<PropsWithChildren<CopyProps>> = ({ codePreviewer, language, code,
   )
 }
 
-export default Copy
+export default CodeBlock

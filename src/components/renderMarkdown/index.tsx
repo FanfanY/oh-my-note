@@ -6,7 +6,7 @@ import { Prism } from 'react-syntax-highlighter'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { styled } from 'styled-components'
-import Copy from 'src/components/copy'
+import CodeBlock from 'src/components/codeBlock'
 import HeadingHashLink from 'src/components/hashLink'
 import { getChildrenId } from 'src/lib/md-utils'
 
@@ -29,22 +29,22 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             const match = /language-(\w+)/.exec(className || '')
             const code = String(children).replace(/\n$/, '')
             const language = match ? match[1] : ''
+            const mode = (['codesandbox', 'preview'] as Array<CodeblockMode>).find((item) =>
+              match?.['input']?.toLocaleLowerCase()?.includes(item),
+            )
             return !inline && match ? (
-              <Copy
+              <CodeBlock
                 code={code}
+                mode={mode}
                 renderHighlighter={
                   <SyntaxHighlighter {...props} language={language}>
                     {code}
                   </SyntaxHighlighter>
                 }
-                codeSandbox={match['input']?.toLocaleLowerCase()?.includes('codesandbox')}
                 language={language}
-                codePreviewer={<div dangerouslySetInnerHTML={{ __html: code }} />}
               />
             ) : (
-              <code {...props} className={className}>
-                {children}
-              </code>
+              <code {...props}>{children}</code>
             )
           },
           h2({ node, children, level }) {

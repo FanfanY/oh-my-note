@@ -3,3 +3,5 @@ interface Menu {
   label: string
   children: undefined | Array<Menu>
 }
+
+type CodeblockMode = 'codesandbox' | 'preview'
