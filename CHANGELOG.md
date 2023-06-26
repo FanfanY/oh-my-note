@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/18888628835/oh-my-note/compare/v1.10.1...v1.11.0) (2023-06-24)
+
+
+### Features
+
+* codeSandbox and shadow dom ([a896c2c](https://github.com/18888628835/oh-my-note/commit/a896c2cc4e18420b6d404099051d48eab2cf5b20))
+
 ## [1.10.1](https://github.com/18888628835/oh-my-note/compare/v1.10.0...v1.10.1) (2023-06-20)
 
 
