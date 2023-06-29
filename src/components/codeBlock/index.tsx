@@ -1,13 +1,13 @@
 'use client'
 import { Tooltip } from 'antd'
 import classNames from 'classnames'
-import { getParameters } from 'codesandbox/lib/api/define'
 import React, { FC, PropsWithChildren, useState } from 'react'
 import { AiOutlineCheck, AiOutlineCodeSandbox } from 'react-icons/ai'
 import { BsCodeSlash, BsCode } from 'react-icons/bs'
 import { MdOutlineContentCopy } from 'react-icons/md'
 import Root from 'react-shadow'
 import styles from 'src/components/codeBlock/index.module.scss'
+import { getCodeSandboxParameters, getCodeSandboxSrc } from 'src/lib/md-utils'
 
 interface CopyProps {
   code: string
@@ -15,86 +15,7 @@ interface CopyProps {
   mode?: CodeblockMode
   renderHighlighter: React.ReactNode
 }
-const codeSandboxSrc = 'https://codesandbox.io/api/v1/sandboxes/define'
-const packageJSON = {
-  dependencies: {
-    '@ant-design/icons': 'latest',
-    '@types/react': '^18.0.0',
-    '@types/react-dom': '^18.0.0',
-    antd: '5.6.2',
-    'rc-util': '^5.32.0',
-    react: '^18.0.0',
-    'react-dom': '^18.0.0',
-    'react-scripts': '^5.0.0',
-  },
-  devDependencies: {
-    typescript: '^5.0.2',
-  },
-}
-const indexHtml = `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-  </head>
-  <body>
-    <div id="container" style="padding: 24px" />
-    <script>const mountNode = document.getElementById('container');</script>
-  </body>
-</html>
-`
-const indexJsx = `
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './app';
 
-createRoot(document.getElementById('container')).render(<App />);
-  `
-
-const appJsx = `
-import React from 'react';
-import { Button, Space } from 'antd';
-import  Demo  from './demo';
-  
-const App: React.FC = () => <Demo/>;
-  
-export default App;
-  `
-function getCodeSandboxParameters({ language, code }: { language: string; code: string }) {
-  let configuration = {}
-  if (['jsx', 'tsx'].includes(language)) {
-    configuration = {
-      'index.html': {
-        content: indexHtml,
-        isBinary: false,
-      },
-      [`index.${language}`]: {
-        content: indexJsx,
-        isBinary: false,
-      },
-      [`app.${language}`]: { content: appJsx, isBinary: false },
-      [`demo.${language}`]: {
-        content: code,
-        isBinary: false,
-      },
-    }
-  }
-  return getParameters({
-    files: {
-      'package.json': {
-        content: JSON.stringify(packageJSON, null, 2),
-        isBinary: false,
-      },
-      [`index.${language}`]: {
-        content: code,
-        isBinary: false,
-      },
-      ...configuration,
-    },
-  })
-}
 const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHighlighter, mode }) => {
   const [copied, setCopied] = useState(false)
   const [showCode, setShowCode] = useState(false)
@@ -139,12 +60,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
             className="w-full h-full"
             width="100%"
             height="auto"
-            src={
-              codeSandboxSrc +
-              '?parameters=' +
-              parameters +
-              '&autoresize=1&view=preview&runonclick=1&embed=1&hidedevtools=1&hidenavigation=1&theme=light'
-            }
+            src={getCodeSandboxSrc({ embed: true, parameters })}
           />
         </div>
       ) : (
@@ -154,7 +70,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
         <footer>
           <form
             className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] border-dashed"
-            action={codeSandboxSrc}
+            action={getCodeSandboxSrc({ embed: false })}
             method="POST"
             target="_blank"
           >

@@ -34,14 +34,12 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             )
             return !inline && match ? (
               <CodeBlock
-                code={code}
-                mode={mode}
+                {...{ code, mode, language }}
                 renderHighlighter={
                   <SyntaxHighlighter {...props} language={language}>
                     {code}
                   </SyntaxHighlighter>
                 }
-                language={language}
               />
             ) : (
               <code {...props}>{children}</code>
