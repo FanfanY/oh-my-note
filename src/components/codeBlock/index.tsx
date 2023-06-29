@@ -5,9 +5,10 @@ import React, { FC, PropsWithChildren, useState } from 'react'
 import { AiOutlineCheck, AiOutlineCodeSandbox } from 'react-icons/ai'
 import { BsCodeSlash, BsCode } from 'react-icons/bs'
 import { MdOutlineContentCopy } from 'react-icons/md'
+import { VscDebugStart } from 'react-icons/vsc'
 import Root from 'react-shadow'
 import styles from 'src/components/codeBlock/index.module.scss'
-import { getCodeSandboxParameters, getCodeSandboxSrc } from 'src/lib/md-utils'
+import { executeJS, getCodeSandboxParameters, getCodeSandboxSrc } from 'src/lib/md-utils'
 
 interface CopyProps {
   code: string
@@ -40,15 +41,27 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
     <div className={styles['root-container']}>
       <div className={classNames(styles['copy-wrap'], 'flex-space-between-box')}>
         <div className={styles['language']}>{language}</div>
-        <Tooltip title="复制代码">
-          <button onClick={onCopy} className={classNames('flex-center-box', styles['copy-btn'])}>
-            {!copied ? (
-              <MdOutlineContentCopy className={classNames('animate__animated', 'animate__zoomIn')} />
-            ) : (
-              <AiOutlineCheck className={classNames('animate__animated', 'animate__zoomIn')} />
-            )}
-          </button>
-        </Tooltip>
+        <div className="flex gap-1">
+          {['js', 'javascript'].includes(language) && (
+            <Tooltip title="执行代码">
+              <button
+                onClick={() => executeJS(code)}
+                className={classNames('flex items-center justify-center', styles['copy-btn'])}
+              >
+                <VscDebugStart />
+              </button>
+            </Tooltip>
+          )}
+          <Tooltip title="复制代码">
+            <button onClick={onCopy} className={classNames('flex-center-box', styles['copy-btn'])}>
+              {!copied ? (
+                <MdOutlineContentCopy className={classNames('animate__animated', 'animate__zoomIn')} />
+              ) : (
+                <AiOutlineCheck className={classNames('animate__animated', 'animate__zoomIn')} />
+              )}
+            </button>
+          </Tooltip>
+        </div>
       </div>
       {mode === 'preview' ? (
         <Root.div className="px-2 py-2 w-full max-h-[500px] overflow-scroll flex justify-center items-center">

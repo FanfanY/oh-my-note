@@ -72,3 +72,11 @@ export function getCodeSandboxSrc({ embed, parameters }: { embed: boolean; param
   const searchString = queryString.stringify({ ...embedConfiguration, parameters })
   return `${codeSandboxSrc}?${searchString}`
 }
+
+export function executeJS(code: string) {
+  try {
+    return new Function(code)()
+  } catch (error) {
+    if (error instanceof Error) window.alert(error.message)
+  }
+}
