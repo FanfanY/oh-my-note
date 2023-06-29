@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/18888628835/oh-my-note/compare/v1.11.0...v1.12.0) (2023-06-29)
+
+
+### Features
+
+* codeBlock ([5584ece](https://github.com/18888628835/oh-my-note/commit/5584ece0d25d855c7f8ca44fc81d7f0520ef3898))
+
 ## [1.11.0](https://github.com/18888628835/oh-my-note/compare/v1.10.1...v1.11.0) (2023-06-24)
 
 
