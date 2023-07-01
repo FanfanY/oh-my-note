@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import { marked } from 'marked'
 import AppConfig from 'src/config/app'
 export function isDirectory(path: string) {
@@ -33,4 +34,10 @@ export function getTextFromRaw(rawText?: string) {
 
 export function readDir(entry: string) {
   return fs.readdirSync(entry).filter((file) => (file === '.DS_Store' ? false : true))
+}
+
+export function getREADME() {
+  const readmePath = path.join(process.cwd(), 'README.md')
+  const markdown = fs.readFileSync(readmePath, 'utf-8')
+  return markdown
 }

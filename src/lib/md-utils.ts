@@ -51,7 +51,7 @@ export function getCodeSandboxParameters({ language, code }: { language: string;
         isBinary: false,
       },
       'package.json': {
-        content: JSON.stringify(packageJSON, null, 2),
+        content: JSON.stringify({ ...packageJSON, main: `index.${suffix}` }, null, 2),
         isBinary: false,
       },
     }
