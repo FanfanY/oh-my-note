@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/18888628835/oh-my-note/compare/v1.12.0...v1.13.0) (2023-07-01)
+
+
+### Features
+
+* execute js ([ba636b6](https://github.com/18888628835/oh-my-note/commit/ba636b627ffcdf4b966495a357a776f60cd61047))
+
 ## [1.12.0](https://github.com/18888628835/oh-my-note/compare/v1.11.0...v1.12.0) (2023-06-29)
 
 
